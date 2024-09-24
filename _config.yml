@@ -20,9 +20,9 @@
 
 title: My DevOps Blog
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This is my DevOps Blog, I plan on using this to document my journey
+  and experiences in DevOps. Post will include both new tools, and findings
+  but also how-to's or Did you know posts.
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: mxw-sec.github.io
 url: "https://mxw-sec.github.io" # the base hostname & protocol for your site, e.g. http://example.com
