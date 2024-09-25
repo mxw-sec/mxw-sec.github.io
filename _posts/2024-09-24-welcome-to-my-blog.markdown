@@ -2,13 +2,13 @@
 layout: post
 title:  "Welcome to my Blog!"
 date:   2024-09-24 16:08:29 -0500
-categories: New Site
+categories: "New-Site"
 ---
 This is the first blog on my new site, I know it isn't much yet, but I am hoping that over time this will become a resource for myself and others as I document my experiences in the DevOps World.
 
 ## Background
 
-Lets see if this works properly
+Lets see if this works properly Trying some new settings and this is a temp post. 
 {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"

@@ -16,8 +16,11 @@ Now if you are connecting alot of different repos, I would highly recommend depl
 ### Generate New keys
 
 So step 1 in the process is to generate new keys for your repo, I would highly recommend using a different key for each repo if possible. Below is the command we used to generate a new key for Github using the recommended algorithm of ED25519 256  
-  
-`ssh-keygen -t ed25519 -C "Email.Address@example.com"`
+
+{% highlight bash %}
+ssh-keygen -t ed25519 -C "Email.Address@example.com"
+{% endhighlight %}
+
 
 This command should prompt you for a storage location and a passphrase, **Currently (September 2024) ARGOCD does NOT support Passphrases on SSH Keys**.
 
