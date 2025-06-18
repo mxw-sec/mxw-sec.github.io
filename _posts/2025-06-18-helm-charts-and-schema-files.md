@@ -16,7 +16,7 @@ Helm charts are collections of templates or Kubernetes manifests that are packag
 I am guessing that you have seen the many technical blogs that have something like
 
 {% highlight bash %}
-`kubectl apply -f https://{somerandompath}/file.yaml`
+kubectl apply -f https://{somerandompath}/file.yaml
 {% endhighlight %}
 
 While that is great for a single resource, that happens when you have 4-5 or more files that all need to be deployed?  
@@ -35,7 +35,7 @@ Now the Schema file really is just a constraint file, it uses simple regex or st
 Here is a sample Values.Schema.Json file I am currently using:
 
 {% highlight json %}
-`{
+{
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "title": "Simplified .NET Chart Values",
   "description": "JSON Schema for Pacvue simplified .NET Helm chart values.yaml",
@@ -136,5 +136,5 @@ Here is a sample Values.Schema.Json file I am currently using:
   },
   "required": ["services", "developer", "leader", "appEnv", "imageUrl"]
 }
-`
+
 {% endhighlight %}
