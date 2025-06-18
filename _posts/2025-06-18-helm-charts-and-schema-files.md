@@ -1,10 +1,16 @@
+---
+layout: post
+title: "Helm Charts and Schema files"
+categories: [DevOps, HELM]
+---
+
 # 2025-06-18 Helm Charts and Schema files
 
 Hey Guys,
 
 Long time since I wrote any form of blog post, so I figured I would just jump directly into the Chaos of Helm Charts and Schema Files.
 
-<p class="callout info">**SCHEMA FILES ARE NOT REQUIRED BUT RECOMMENDED**</p>
+<p class="callout info">*SCHEMA FILES ARE NOT REQUIRED BUT RECOMMENDED*</p>
 
 ### **HELM CHARTS AND SCHEMA**
 
@@ -36,7 +42,7 @@ Here is a sample Values.Schema.Json file I am currently using:
 
 {% highlight json %}
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
+"$schema": "https://json-schema.org/draft/2019-09/schema",
   "title": "Simplified .NET Chart Values",
   "description": "JSON Schema for Pacvue simplified .NET Helm chart values.yaml",
   "type": "object",
@@ -50,91 +56,91 @@ Here is a sample Values.Schema.Json file I am currently using:
       "description": "Service definitions",
       "patternProperties": {
         "^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]$": {
-          "type": "object",
-          "properties": {
-            "appName": {
-              "type": "string",
-              "description": "Application name"
-            },
-            "revisionHistoryLimit": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 10,
-              "default": 3
-            },
-            "nameSpace": {
-              "type": "string",
-              "default": "default"
-            },
-            "appEnv": {
-              "type": "string",
-              "description": "Application environment",
-              "default": "us-dev",
-              "enum": [
-                "values"
-              ]
-            },
-            "appProfile": {
-              "type": "string",
-              "default": "dev",
-              "enum": [
-                "values"
-              ],
-              "description": "Application profile"
-            },
-            "replicas": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 20,
-              "default": 1
-            },
-            "memoryRequest": {
-              "type": "string",
-              "pattern": "^[0-9]+[GMK]i?$",
+"type": "object",
+"properties": {
+"appName": {
+"type": "string",
+"description": "Application name"
+},
+"revisionHistoryLimit": {
+"type": "integer",
+"minimum": 0,
+"maximum": 10,
+"default": 3
+},
+"nameSpace": {
+"type": "string",
+"default": "default"
+},
+"appEnv": {
+"type": "string",
+"description": "Application environment",
+"default": "us-dev",
+"enum": [
+"values"
+]
+},
+"appProfile": {
+"type": "string",
+"default": "dev",
+"enum": [
+"values"
+],
+"description": "Application profile"
+},
+"replicas": {
+"type": "integer",
+"minimum": 0,
+"maximum": 20,
+"default": 1
+},
+"memoryRequest": {
+"type": "string",
+"pattern": "^[0-9]+[GMK]i?$",
               "default": "1Gi"
             },
             "memoryLimit": {
               "type": "string",
               "pattern": "^[0-9]+[GMK]i?$",
-              "default": "4Gi"
-            },
-            "imageName": {
-              "type": "string"
-            },
-            "imageTag": {
-              "type": "string",
-              "default": "latest"
-            },
-            "healthPath": {
-              "type": "string",
-              "default": "/health"
-            },
-            "languageVersion": {
-              "type": "string",
-              "enum": ["6.0", "7.0", "8.0"],
-              "default": "8.0"
-            },
-            "appStartCommand": {
-              "type": "string",
-              "default": "dotnet $(EXE_FILE)"
+"default": "4Gi"
+},
+"imageName": {
+"type": "string"
+},
+"imageTag": {
+"type": "string",
+"default": "latest"
+},
+"healthPath": {
+"type": "string",
+"default": "/health"
+},
+"languageVersion": {
+"type": "string",
+"enum": ["6.0", "7.0", "8.0"],
+"default": "8.0"
+},
+"appStartCommand": {
+"type": "string",
+"default": "dotnet $(EXE_FILE)"
             },
             "exeFile": {
               "type": "string",
               "pattern": ".*\\.dll$"
-            },
-            "developer": {
-              "type": "string"
-            },
-            "leader": {
-              "type": "string"
-            }
-          },
-          "required": ["appName", "revisionHistoryLimit"]
-        }
-      }
-    }
-  },
-  "required": ["services", "developer", "leader", "appEnv", "imageUrl"]
+},
+"developer": {
+"type": "string"
+},
+"leader": {
+"type": "string"
+}
+},
+"required": ["appName", "revisionHistoryLimit"]
+}
+}
+}
+},
+"required": ["services", "developer", "leader", "appEnv", "imageUrl"]
 }
 
 {% endhighlight %}
